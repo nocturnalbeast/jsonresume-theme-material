@@ -10,11 +10,11 @@
 }
 
 body {
-  font-family: "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  font-family: "Inter Medium", sans-serif;
   line-height: 1.25rem;
-  background: #EEE;
-  color: rgba(0, 0, 0, .88);
-  font-size: .875rem;
+  background: #eee;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 0.875rem;
 }
 
 .clearfix {
@@ -30,7 +30,7 @@ body {
 }
 
 a {
-  color: rgba(0, 0, 0, .64);
+  color: rgba(0, 0, 0, 0.64);
 }
 
 a:hover {
@@ -47,13 +47,13 @@ footer .profiles {
 }
 
 footer .profiles a:not(:last-of-type) {
-  border-right: 1px solid rgba(0,0,0,.4);
-  margin-right: .6em;
-  padding-right: .8em;
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  margin-right: 0.6em;
+  padding-right: 0.8em;
 }
 
 footer #copyright {
-  color: rgba(0, 0, 0, .4);
+  color: rgba(0, 0, 0, 0.4);
 }
 
 #resume #main .list ul li:not(:first-child) {
@@ -68,21 +68,21 @@ footer #copyright {
 
 #resume #main .list ul li h3.title {
   font-weight: 700;
-  color: rgba(0, 0, 0, .88);
+  color: rgba(0, 0, 0, 0.88);
 }
 
 #resume #main .list ul li h3.subtitle {
   font-weight: 600;
-  color: rgba(0, 0, 0, .64);
+  color: rgba(0, 0, 0, 0.64);
 }
 
 #resume #main .list ul li h3.location,
 #resume #main .list ul li h3.time {
-  color: rgba(0, 0, 0, .64);
+  color: rgba(0, 0, 0, 0.64);
 }
 
 #resume #main .list ul li h3.time .period {
-  color: rgba(0, 0, 0, .64);
+  color: rgba(0, 0, 0, 0.64);
 }
 
 #resume #main .list ul li .left,
@@ -100,7 +100,7 @@ footer #copyright {
 
 #resume #main .list ul li .description {
   font-size: 1em;
-  color: rgba(0, 0, 0, .64);
+  color: rgba(0, 0, 0, 0.64);
 }
 
 #resume #main .list ul li .description p {
@@ -109,6 +109,17 @@ footer #copyright {
 
 #resume #main .list ul li .description p:last-of-type {
   margin-bottom: 0;
+}
+
+#resume #main .list ul li .highlights li {
+  list-style-type: disc;
+  margin-top: 12px;
+  margin-bottom: 0;
+  margin-left: 24px;
+}
+
+#resume #main .list ul li .highlights li:not(:first-child) {
+  margin-top: 0;
 }
 
 #resume #main #contact.list ul li,
@@ -129,7 +140,8 @@ footer #copyright {
   box-sizing: content-box;
   background: #fff;
   border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
 .resume-section {
@@ -150,7 +162,7 @@ footer #copyright {
 h1#name {
   font-size: 2.57em;
   line-height: 2.5rem;
-  color: rgba(0, 0, 0, .88);
+  color: rgba(0, 0, 0, 0.88);
   font-weight: 600;
   position: relative;
   margin-top: 2px;
@@ -160,7 +172,7 @@ h1#name {
   font-size: 1em;
   font-weight: 600;
   margin-right: 4px;
-  color: rgba(0, 0, 0, .88);
+  color: rgba(0, 0, 0, 0.88);
   margin-top: 7px;
 }
 
@@ -171,18 +183,18 @@ ul.subContact {
 
 ul.subContact li {
   display: inline-block;
-  color: rgba(0, 0, 0, .64);
+  color: rgba(0, 0, 0, 0.64);
   margin-right: 8px;
 }
 
 ul.subContact li a {
-  color: rgba(0, 0, 0, .64);
+  color: rgba(0, 0, 0, 0.64);
 }
 
 ul.subContact li:not(:last-of-type) {
-  border-right: 1px solid rgba(0, 0, 0, .4);
-  margin-right: .6em;
-  padding-right: .8em;
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  margin-right: 0.6em;
+  padding-right: 0.8em;
 }
 
 .icon {
@@ -193,7 +205,7 @@ ul.subContact li:not(:last-of-type) {
 }
 
 .subContact svg {
-  fill: rgba(0, 0, 0, .64);
+  fill: rgba(0, 0, 0, 0.64);
 }
 
 .resumeSection {
@@ -204,7 +216,7 @@ ul.subContact li:not(:last-of-type) {
 }
 
 .about-me {
-  color: rgba(0, 0, 0, .64);
+  color: rgba(0, 0, 0, 0.64);
   font-size: 1em;
 }
 
@@ -284,15 +296,15 @@ ul.subContact li:not(:last-of-type) {
   margin-top: 0;
   margin-bottom: 4px;
   font-size: 1em;
-  color: rgba(0, 0, 0, .64);
+  color: rgba(0, 0, 0, 0.64);
 }
 
 .skills h3.title {
   font-weight: 700;
-  color: rgba(0, 0, 0, .88);
+  color: rgba(0, 0, 0, 0.88);
 }
 
-@media screen and (max-width:850px) {
+@media screen and (max-width: 850px) {
   .sectionLeft,
   .sectionRight {
     float: none;
@@ -335,7 +347,7 @@ ul.subContact li:not(:last-of-type) {
   }
 }
 
-@media screen and (max-width:420px) {
+@media screen and (max-width: 420px) {
   body {
     font-size: 1rem;
   }
