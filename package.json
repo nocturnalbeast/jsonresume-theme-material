@@ -4,7 +4,8 @@
   "description": "Material theme for JSON Resume",
   "author": "Hector Guo",
   "scripts": {
-    "start": "resume serve"
+    "start": "resume serve --theme .",
+    "export": "resume export resume --format pdf --theme ."
   },
   "repository": {
     "type": "git",
@@ -12,7 +13,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "handlebars": ">=4.3.0",
-    "resume-cli": "^1.2.7"
+    "handlebars": "^4.3.0",
+    "resume-cli": "2.2.4"
   }
 }
