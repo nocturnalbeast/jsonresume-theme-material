@@ -1,8 +1,6 @@
-# Json Resume - Material theme 
+# jsonresume-theme-material
 
-This is the material theme for [JSON Resume](http://jsonresume.org/).
-
-Added `projects` tag，responsive design.
+This is the Material theme for [JSON Resume](http://jsonresume.org/) project.
 
 ![demo](https://user-images.githubusercontent.com/1996426/80295515-12ad2480-8728-11ea-8d54-27f9bccf1353.png)
 
@@ -10,31 +8,37 @@ Added `projects` tag，responsive design.
 
 ### Install Node.js
 
-If you don't know how to install `node.js` and `npm`, see these:
+Get the latest LTS/current installer for your platform from the official Node.js website [here](https://nodejs.org/en/download).
 
-- [node.js](http://howtonode.org/how-to-install-nodejs)
-- [npm](http://howtonode.org/introduction-to-npm)
+### Install resume-cli (optional, but recommended)
+
+Once Node.js is installed, run the command `npm install -g resume-cli`.
+
+**Please note:** this is not necessary since the next step(s) take care of the same, but is recommended when working with other JSON Resume themes.
 
 ### Download theme
 
-Lets go ahead and download a [copy of the repository](https://github.com/hectorguo/jsonresume-theme-material/archive/master.zip).
+Do **either** of the following:
+
+- Clone the repository using the command `git clone https://github.com/nocturnalbeast/jsonresume-theme-material`
+- Download a [copy of the repository](https://github.com/nocturnalbeast/jsonresume-theme-material/archive/master.zip).
 
 ### Install npm packages
 
 We need to install the dependencies. `cd` into the theme folder we just downloaded and run:
 
-```bash
+```sh
 npm install
 ```
 
 This will read the local `package.json` and install the packages listed under `dependencies`.
 
-### Serve theme
+### Hosting
 
-While inside the theme folder, simply run:
+While inside the theme folder, run the following command:
 
 ```
-npm start
+npm run serve
 ```
 
 You should now see this message:
@@ -44,61 +48,51 @@ Preview: http://localhost:4000
 Press ctrl-c to stop
 ```
 
-Congratulations, you've made it!
+Your default browser should open with the resume rendered from the sample `resume.json` included within the repository.
 
-__The theme development can now begin.__
+### Exporting
 
-### Fill your resume
+While inside the theme folder, run the following command:
 
-`resume.json` is your resume data, modify it to yourself's.
+```
+npm run export
+```
 
-In this template, only `summary` can be inserted into html `tag`, such as 
+You should now see this message:
 
-``` json
+```
+Done! Find your new .pdf resume at:
+ ...path_to_repository/resume.pdf
+```
+
+## Modifying the theme / Theme development
+
+The theme is structured as follows:
+
+- `package.json` - The NPM definition of the theme (this theme) package.
+- `index.js` - The entrypoint for JSON Resume tool.
+- `main.hbs` - The main template, uses [Handlebars](https://handlebarsjs.com/) as it's templating engine.
+- `partials/*.hbs` - The sections of the Handlebars template, included within the `main.hbs` file.
+- `style.css` - The material theme CSS definition.
+- `resume.json` - The sample resume data containing all fields that are supported within this theme.
+
+### Editing resume.json
+
+A sample `resume.json` file has been included within this repository. This contains all the fields that are supported within this theme.
+
+Once you modify the data within the `resume.json` file and save it, the brower will reload if the server is running.
+
+### Embedding HTML content
+
+In this template, only `summary` can host HTML content. This can be done like so:
+
+```json
 {
-  "name": "Personal",
-  "summary": "<a href=\"http://hectorguo.com/en/projects/\">Projects Page</a>"
+  "name": "Heading",
+  "summary": "Point 1<br>Point 2<br>Point 3"
 }
 ```
 
-## Custom
-
-`resume.hbs` is the template file, its syntax is based on [handlebars](http://handlebarsjs.com/).
-
-`style.css` defines your styles. Technically, this is completely optional, as you could just write all of your styles in the `<style>` tags of your `resume.template`. As the `index.js`, the contents of the `style.css` are put into the `<style>` tags of your compiled theme later, yet again, this is something can change.
-
 ## License
 
-Available under [the MIT license](http://mths.be/mit).
-
-## 中文指南
-
-1. 首先，确保已经安装 [node.js](http://howtonode.org/how-to-install-nodejs) 和 [npm](http://howtonode.org/introduction-to-npm)。
-
-2. 下载该主题包：
-
-  [点此下载](https://github.com/hectorguo/jsonresume-theme-material/archive/master.zip)
-
-  下载依赖包：
-
-  在下载解压后的目录，输入：
-
-  ```bash
-  npm install
-  ```
-
-3. 修改简历
-
-  在`resume.json`中修改简历数据，或者直接 [在线编辑](http://registry.jsonresume.org/) 并生成你的json版简历。
-  新增`项目经历`类目，详情可在样例中查看。
-
-4. 在当前目录运行：
-
-  ```
-  npm start
-  ```
-
-  此时目录中会生成一个 `index.html`文件，即简历。
-
-
-
+Available under [the MIT license](https://mit-license.org/).

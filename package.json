@@ -2,18 +2,18 @@
   "name": "jsonresume-theme-material",
   "version": "1.0.0",
   "description": "Material theme for JSON Resume",
-  "author": "Hector Guo",
+  "author": "nocturnalbeast",
   "scripts": {
-    "start": "resume serve --theme .",
+    "serve": "resume serve --theme .",
     "export": "resume export resume --format pdf --theme ."
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hectorguo/jsonresume-theme-material"
+    "url": "https://github.com/nocturnalbeast/jsonresume-theme-material"
   },
   "license": "MIT",
   "dependencies": {
-    "handlebars": "^4.3.0",
-    "resume-cli": "2.2.4"
+    "handlebars": "^4.7.7",
+    "resume-cli": "3.0.6"
   }
 }

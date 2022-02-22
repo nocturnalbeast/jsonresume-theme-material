@@ -85,7 +85,7 @@
             {{/if}}
           {{/resume.basics}}
 
-          {{#if resume.work.length}}
+          {{#if resume.workEnabled}}
             <section class="resume-section">
               <section class="sectionLeft">
                 <h2 class="resumeSection">Experience</h2>
@@ -95,8 +95,8 @@
                   <ul>
                     {{#each resume.work}}
                       <li class="experience">
-                        {{#if company}}
-                          <h3 class="title">{{company}}{{#if position}}
+                        {{#if name}}
+                          <h3 class="title">{{name}}{{#if position}}
                               –
                               {{position}}{{/if}}</h3>{{/if}}
                         <h3 class="time">{{#if startDate}}{{startDate}}{{/if}}
@@ -123,7 +123,7 @@
             </section>
           {{/if}}
 
-          {{#if resume.projects.length}}
+          {{#if resume.projectsEnabled}}
             <section class="resume-section">
               <section class="sectionLeft">
                 <h2 class="resumeSection">Projects</h2>
@@ -154,9 +154,9 @@
                         <h3 class="time">{{#if startDate}}{{startDate}}{{/if}}
                           –
                           {{#if endDate}}{{endDate}}{{else}}Present{{/if}}</h3>
-                        {{#if summary}}
+                        {{#if description}}
                           <div class="description">
-                            <p>{{{summary}}}</p>
+                            <p>{{{description}}}</p>
                           </div>
                         {{/if}}
                       </li>
@@ -168,7 +168,7 @@
             </section>
           {{/if}}
 
-          {{#if resume.education.length}}
+          {{#if resume.educationEnabled}}
             <section class="resume-section">
               <section class="sectionLeft">
                 <h2 class="resumeSection">Education</h2>
@@ -196,7 +196,7 @@
             </section>
           {{/if}}
 
-          {{#if resume.awards.length}}
+          {{#if resume.awardsEnabled}}
             <section class="resume-section">
               <section class="sectionLeft">
                 <h2 class="resumeSection">Awards</h2>
@@ -229,7 +229,7 @@
             </section>
           {{/if}}
 
-          {{#if resume.publications.length}}
+          {{#if resume.publicationsEnabled}}
             <section class="resume-section">
               <section class="sectionLeft">
                 <h2 class="resumeSection">Publications</h2>
@@ -242,8 +242,8 @@
                         {{#if name}}
                           <h3 class="title">
                             {{name}}
-                            {{#if website}}
-                              <a href="{{website}}"><span class="icon"><svg
+                            {{#if url}}
+                              <a href="{{url}}"><span class="icon"><svg
                                     viewBox="0 0 24 24"
                                     preserveAspectRatio="xMidYMid meet"
                                     class="style-scope iron-icon"
@@ -276,7 +276,7 @@
             </section>
           {{/if}}
 
-          {{#if resume.skills.length}}
+          {{#if resume.skillsEnabled}}
             <section class="resume-section">
               <section class="sectionLeft">
                 <h2 class="resumeSection">Skills</h2>
@@ -301,7 +301,7 @@
             </section>
           {{/if}}
 
-          {{#if resume.languages.length}}
+          {{#if resume.languagesEnabled}}
             <section class="resume-section">
               <section class="sectionLeft">
                 <h2 class="resumeSection">Languages</h2>
@@ -328,7 +328,7 @@
             </section>
           {{/if}}
 
-          {{#if resume.interests.length}}
+          {{#if resume.interestsEnabled}}
             <section class="resume-section">
               <section class="sectionLeft">
                 <h2 class="resumeSection">Interests</h2>
