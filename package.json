@@ -1,19 +1,19 @@
 {
-  "name": "jsonresume-theme-material",
-  "version": "1.0.0",
-  "description": "Material theme for JSON Resume",
-  "author": "nocturnalbeast",
-  "scripts": {
-    "serve": "resume serve --theme .",
-    "export": "resume export resume --format pdf --theme ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nocturnalbeast/jsonresume-theme-material"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "handlebars": "^4.7.7",
-    "resume-cli": "3.0.6"
-  }
+    "name": "jsonresume-theme-material",
+    "version": "1.0.0",
+    "description": "Material theme for JSON Resume",
+    "author": "nocturnalbeast",
+    "scripts": {
+        "serve": "resume serve --theme .",
+        "export": "resume export resume --format pdf --theme ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nocturnalbeast/jsonresume-theme-material"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "handlebars": "^4.7.7",
+        "resume-cli": "3.0.6"
+    }
 }

@@ -2,6 +2,14 @@ var fs = require("fs");
 var path = require("path");
 var Handlebars = require("handlebars");
 
+Handlebars.registerHelper("join", function (array, sep, options) {
+    return array
+        .map(function (item) {
+            return item;
+        })
+        .join(sep);
+});
+
 function render(resume) {
     if (resume.work && resume.work.length) {
         resume.workEnabled = true;
@@ -63,24 +71,27 @@ function render(resume) {
         resume.referencesEnabled = false;
     }
 
-    // use an ugly hack to inject Export to PDF option within the profiles section
+    // use an ugly hack to set PDF/export-related options
     if (process.argv.slice(2)[0] != "export") {
         const exportToPDF = {
             network: "Export to PDF",
             username: "",
-            url: "javascript:window.print();"
+            url: "javascript:window.print();",
         };
         if (resume.basics.profiles && resume.basics.profiles.length) {
             resume.basics.profiles[resume.basics.profiles.length] = exportToPDF;
         } else {
             resume.basics.profiles[0] = exportToPDF;
         }
+        resume.linksEnabled = true;
+    } else {
+        resume.linksEnabled = false;
     }
 
     var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
     var tpl = fs.readFileSync(__dirname + "/main.hbs", "utf-8");
 
-    var partialsDir = path.join(__dirname, 'partials');
+    var partialsDir = path.join(__dirname, "partials");
     var filenames = fs.readdirSync(partialsDir);
     filenames.forEach(function (filename) {
         var matches = /^([^.]+).hbs$/.exec(filename);
@@ -88,18 +99,18 @@ function render(resume) {
             return;
         }
         var name = matches[1];
-        var filepath = path.join(partialsDir, filename)
-        var template = fs.readFileSync(filepath, 'utf8');
+        var filepath = path.join(partialsDir, filename);
+        var template = fs.readFileSync(filepath, "utf8");
 
         Handlebars.registerPartial(name, template);
     });
 
     return Handlebars.compile(tpl)({
         css: css,
-        resume: resume
+        resume: resume,
     });
 }
 
 module.exports = {
-    render: render
+    render: render,
 };

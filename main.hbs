@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{#resume.basics}}{{name}}－{{label}}{{/resume.basics}}</title>
+    <title>{{#resume.basics}}{{name}} - {{label}}{{/resume.basics}}</title>
     {{#resume.basics}}<meta
         name="author"
         content="{{name}}"
@@ -95,13 +95,27 @@
                   <ul>
                     {{#each resume.work}}
                       <li class="experience">
-                        {{#if name}}
-                          <h3 class="title">{{name}}{{#if position}}
-                              –
-                              {{position}}{{/if}}</h3>{{/if}}
-                        <h3 class="time">{{#if startDate}}{{startDate}}{{/if}}
-                          –
-                          {{#if endDate}}{{endDate}}{{else}}Present{{/if}}</h3>
+                        {{#if position}}
+                          <h3 class="title">
+                            {{position}}{{#if name}}
+                              -
+                              {{name}}{{#if location}},
+                                {{location}}{{/if}}{{/if}}
+                            {{#if resume.linksEnabled}}{{#if url}}
+                                <a href="{{url}}"><span class="icon"><svg
+                                      viewBox="0 0 24 24"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      class="style-scope iron-icon"
+                                      style="pointer-events: none; display: block; width: 100%; height: 100%;"
+                                    ><g class="style-scope iron-icon"><path
+                                          d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+                                          class="style-scope iron-icon"
+                                        ></path></g></svg></span>
+                                </a>
+                              {{/if}}{{/if}}
+                          </h3>
+                        {{/if}}
+                        <h3 class="time">{{#if startDate}}{{startDate}}{{#if endDate}} - {{endDate}}{{else}} - present{{/if}}{{/if}}</h3>
                         {{#if summary}}
                           <div class="description">
                             <p>{{{summary}}}</p>
@@ -136,28 +150,35 @@
                         {{#if name}}
                           <h3 class="title">
                             {{name}}
-                            {{#if url}}
-                              <a href="{{url}}"><span class="icon"><svg
-                                    viewBox="0 0 24 24"
-                                    preserveAspectRatio="xMidYMid meet"
-                                    class="style-scope iron-icon"
-                                    style="pointer-events: none; display: block; width: 100%; height: 100%;"
-                                  ><g class="style-scope iron-icon"><path
-                                        d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
-                                        class="style-scope iron-icon"
-                                      ></path></g></svg></span>
-                                Link</a>
-                            {{/if}}
+                            {{#if resume.linksEnabled}}{{#if url}}
+                                <a href="{{url}}"><span class="icon"><svg
+                                      viewBox="0 0 24 24"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      class="style-scope iron-icon"
+                                      style="pointer-events: none; display: block; width: 100%; height: 100%;"
+                                    ><g class="style-scope iron-icon"><path
+                                          d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+                                          class="style-scope iron-icon"
+                                        ></path></g></svg></span>
+                                </a>
+                              {{/if}}{{/if}}
                           </h3>
                         {{/if}}
-
-                        <h3 class="time">{{#if startDate}}{{startDate}}{{/if}}
-                          –
-                          {{#if endDate}}{{endDate}}{{else}}Present{{/if}}</h3>
+                        {{#if roles.length}}
+                          <h3 class="subtitle">{{#join roles ", "}}{{/join}}</h3>
+                        {{/if}}
+                        <h3 class="time">{{#if startDate}}{{startDate}}{{#if endDate}} - {{endDate}}{{else}} - present{{/if}}{{/if}}</h3>
                         {{#if description}}
                           <div class="description">
                             <p>{{{description}}}</p>
                           </div>
+                        {{/if}}
+                        {{#if highlights.length}}
+                          <ul class="highlights">
+                            {{#each highlights}}
+                              <li>{{.}}</li>
+                            {{/each}}
+                          </ul>
                         {{/if}}
                       </li>
                     {{/each}}
@@ -178,15 +199,32 @@
                   <ul id="educations">
                     {{#each resume.education}}
                       <li class="education">
-                        {{#if institution}}<h3
-                            class="title"
-                          >{{institution}}</h3>{{/if}}
-                        {{#if studyType}}<h3
-                            class="subtitle"
-                          >{{studyType}}</h3>{{/if}}
-                        <h3 class="time">{{#if startDate}}{{startDate}}{{/if}}
-                          -
-                          {{#if endDate}}{{endDate}}{{else}}Present{{/if}}</h3>
+                        {{#if institution}}
+                          <h3 class="title">
+                            {{institution}}
+                            {{#if resume.linksEnabled}}{{#if url}}
+                                <a href="{{url}}"><span class="icon"><svg
+                                      viewBox="0 0 24 24"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      class="style-scope iron-icon"
+                                      style="pointer-events: none; display: block; width: 100%; height: 100%;"
+                                    ><g class="style-scope iron-icon"><path
+                                          d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+                                          class="style-scope iron-icon"
+                                        ></path></g></svg></span>
+                                </a>
+                              {{/if}}{{/if}}
+                          </h3>
+                        {{/if}}
+                        {{#if studyType}}<h3 class="subtitle">{{studyType}}{{#if area}} | {{area}}{{/if}}</h3>{{/if}}
+                        <h3 class="time">{{#if startDate}}{{startDate}}{{#if endDate}} - {{endDate}}{{else}} - present{{/if}}{{/if}}</h3>
+                        {{#if courses.length}}
+                          <ul class="highlights">
+                            {{#each courses}}
+                              <li>{{.}}</li>
+                            {{/each}}
+                          </ul>
+                        {{/if}}
                       </li>
                     {{/each}}
                   </ul>
@@ -242,18 +280,18 @@
                         {{#if name}}
                           <h3 class="title">
                             {{name}}
-                            {{#if url}}
-                              <a href="{{url}}"><span class="icon"><svg
-                                    viewBox="0 0 24 24"
-                                    preserveAspectRatio="xMidYMid meet"
-                                    class="style-scope iron-icon"
-                                    style="pointer-events: none; display: block; width: 100%; height: 100%;"
-                                  ><g class="style-scope iron-icon"><path
-                                        d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
-                                        class="style-scope iron-icon"
-                                      ></path></g></svg></span>
-                                Link</a>
-                            {{/if}}
+                            {{#if resume.linksEnabled}}{{#if url}}
+                                <a href="{{url}}"><span class="icon"><svg
+                                      viewBox="0 0 24 24"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      class="style-scope iron-icon"
+                                      style="pointer-events: none; display: block; width: 100%; height: 100%;"
+                                    ><g class="style-scope iron-icon"><path
+                                          d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+                                          class="style-scope iron-icon"
+                                        ></path></g></svg></span>
+                                </a>
+                              {{/if}}{{/if}}
                           </h3>
                         {{/if}}
                         {{#if publisher}}
@@ -285,7 +323,10 @@
                 {{#each resume.skills}}
                   <div class="skills">
                     {{#if name}}
-                      <h3 class="title">{{name}}</h3>
+                      <h3 class="title">
+                        {{name}}
+                        {{#if level}}<span class="skill-level">{{level}}</span>{{/if}}
+                      </h3>
                     {{/if}}
                     {{#if keywords.length}}
                       <ul>
@@ -345,7 +386,7 @@
                           <div class="description">
                             <p>
                               {{#each keywords}}
-                                {{.}}
+                                <span class="keyword">{{.}}</span>
                               {{/each}}</p>
                           </div>
                         {{/if}}
