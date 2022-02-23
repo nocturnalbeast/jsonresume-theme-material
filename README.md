@@ -2,7 +2,7 @@
 
 This is the Material theme for [JSON Resume](http://jsonresume.org/) project.
 
-![demo](https://user-images.githubusercontent.com/1996426/80295515-12ad2480-8728-11ea-8d54-27f9bccf1353.png)
+![demo](https://raw.githubusercontent.com/nocturnalbeast/jsonresume-theme-material/master/samples/preview.png)
 
 ## Getting started
 
@@ -88,8 +88,8 @@ In this template, only `summary` can host HTML content. This can be done like so
 
 ```json
 {
-  "name": "Heading",
-  "summary": "Point 1<br>Point 2<br>Point 3"
+    "name": "Heading",
+    "summary": "Point 1<br>Point 2<br>Point 3"
 }
 ```
 
