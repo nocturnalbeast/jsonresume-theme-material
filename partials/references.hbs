@@ -1,0 +1,24 @@
+{{#if resume.referencesEnabled}}
+  <section class="resume-section">
+    <section class="sectionLeft">
+      <h2 class="resumeSection">References</h2>
+    </section>
+    <section class="sectionRight">
+      <div id="references" class="list">
+        <ul id="references">
+          {{#each resume.references}}
+            <li class="reference">
+              {{#if reference}}
+                <h3 class="title"><i>"{{reference}}"</i></h3>
+              {{/if}}
+              {{#if name}}
+                <h3 class="subtitle"> - {{name}}</h3>
+              {{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+  </section>
+{{/if}}
