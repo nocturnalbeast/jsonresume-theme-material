@@ -1,0 +1,32 @@
+{{#if resume.awardsEnabled}}
+  <section class="resume-section">
+    <section class="sectionLeft">
+      <h2 class="resumeSection">Awards</h2>
+    </section>
+    <section class="sectionRight">
+      <div id="awards" class="list">
+        <ul id="awards">
+          {{#each resume.awards}}
+            <li class="award">
+              {{#if title}}
+                <h3 class="title">{{title}}</h3>
+              {{/if}}
+              {{#if awarder}}
+                <h3 class="subtitle">{{awarder}}</h3>
+              {{/if}}
+              {{#if date}}
+                <h3 class="time">{{date}}</h3>
+              {{/if}}
+              {{#if summary}}
+                <div class="description">
+                  <p>{{{summary}}}</p>
+                </div>
+              {{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+  </section>
+{{/if}}

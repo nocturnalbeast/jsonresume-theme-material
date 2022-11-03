@@ -1,0 +1,26 @@
+{{#if resume.languagesEnabled}}
+  <section class="resume-section">
+    <section class="sectionLeft">
+      <h2 class="resumeSection">Languages</h2>
+    </section>
+    <section class="sectionRight">
+      <div id="languages" class="list">
+        <ul id="languages">
+          {{#each resume.languages}}
+            <li class="lang">
+              {{#if language}}
+                <h3 class="title">{{language}}</h3>
+              {{/if}}
+              {{#if fluency}}
+                <div class="description">
+                  <p>{{fluency}}</p>
+                </div>
+              {{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+  </section>
+{{/if}}

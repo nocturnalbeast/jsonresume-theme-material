@@ -1,0 +1,46 @@
+{{#if resume.publicationsEnabled}}
+  <section class="resume-section">
+    <section class="sectionLeft">
+      <h2 class="resumeSection">Publications</h2>
+    </section>
+    <section class="sectionRight">
+      <div id="publications" class="list">
+        <ul id="publications">
+          {{#each resume.publications}}
+            <li class="award">
+              {{#if name}}
+                <h3 class="title">
+                  {{name}}
+                  {{#if resume.linksEnabled}}{{#if url}}
+                      <a href="{{url}}"><span class="icon"><svg
+                            viewBox="0 0 24 24"
+                            preserveAspectRatio="xMidYMid meet"
+                            class="style-scope iron-icon"
+                            style="pointer-events: none; display: block; width: 100%; height: 100%;"
+                          ><g class="style-scope iron-icon"><path
+                                d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+                                class="style-scope iron-icon"
+                              ></path></g></svg></span>
+                      </a>
+                    {{/if}}{{/if}}
+                </h3>
+              {{/if}}
+              {{#if publisher}}
+                <h3 class="subtitle">{{publisher}}</h3>
+              {{/if}}
+              {{#if releaseDate}}
+                <h3 class="time">{{releaseDate}}</h3>
+              {{/if}}
+              {{#if summary}}
+                <div class="description">
+                  <p>{{{summary}}}</p>
+                </div>
+              {{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+    <div class="clearfix"></div>
+  </section>
+{{/if}}
