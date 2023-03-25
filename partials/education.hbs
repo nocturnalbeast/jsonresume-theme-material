@@ -27,7 +27,7 @@
               {{/if}}
               {{#if studyType}}<h3 class="subtitle">{{studyType}}{{#if area}}
                     |
-                    {{area}}{{/if}}</h3>{{/if}}
+                    {{area}}{{/if}}{{#if score}} [{{#scorePrefix score}}{{/scorePrefix}}: {{score}}]{{/if}}</h3>{{/if}}
               <h3 class="time">{{#if startDate}}{{startDate}}{{#if endDate}}
                     -
                     {{endDate}}{{else}} - present{{/if}}{{/if}}</h3>

@@ -10,6 +10,10 @@ Handlebars.registerHelper("join", function (array, sep) {
     .join(sep);
 });
 
+Handlebars.registerHelper("scorePrefix", function (string) {
+  return string.toString().endsWith("%") ? "Percentage" : "CGPA";
+});
+
 function render(resume) {
   if (resume.work && resume.work.length) {
     resume.workEnabled = true;
