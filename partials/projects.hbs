@@ -36,6 +36,14 @@
                   <p>{{{description}}}</p>
                 </div>
               {{/if}}
+              {{#if keywords.length}}
+                <div style="margin-top: 5px;">
+                  <p>
+                    {{#each keywords}}
+                      <span class="keyword">{{.}}</span>
+                    {{/each}}</p>
+                </div>
+              {{/if}}
               {{#if highlights.length}}
                 <ul class="highlights">
                   {{#each highlights}}

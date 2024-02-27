@@ -354,6 +354,9 @@ ul.subContact li:not(:last-of-type) {
   padding: 3px 6px 3px 6px;
   text-align: center;
   text-decoration: none;
+}
+
+.lowercase {
   text-transform: lowercase;
 }
 

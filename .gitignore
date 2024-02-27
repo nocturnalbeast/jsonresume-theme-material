@@ -3,6 +3,6 @@ node_modules/
 npm-debug.log
 resume.html
 index.html
-*.pdf
+/*.pdf
 package-lock.json
 .DS_Store

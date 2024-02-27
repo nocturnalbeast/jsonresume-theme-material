@@ -12,10 +12,10 @@
                 <h3 class="title">{{name}}</h3>
               {{/if}}
               {{#if keywords.length}}
-                <div class="description">
+                <div>
                   <p>
                     {{#each keywords}}
-                      <span class="keyword">{{.}}</span>
+                      <span class="keyword lowercase">{{.}}</span>
                     {{/each}}</p>
                 </div>
               {{/if}}
