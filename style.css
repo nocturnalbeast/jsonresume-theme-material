@@ -1,458 +1,471 @@
 :root {
-    --section-header-color: #009688;
-    --font-color: rgba(0, 0, 0, 0.88);
-    --font-color-light: rgba(0, 0, 0, 0.64);
-    --font-color-lighter: rgba(0, 0, 0, 0.4);
-    --page-background-color: #eee;
-    --content-background-color: #fff;
-    --skill-level-color: #fff;
-    --skill-level-background-color: #00796b;
-    --keyword-color: #123456;
+  --section-header-color: #009688;
+  --font-color: rgba(0, 0, 0, 0.88);
+  --font-color-light: rgba(0, 0, 0, 0.64);
+  --font-color-lighter: rgba(0, 0, 0, 0.4);
+  --page-background-color: #eee;
+  --content-background-color: #fff;
+  --skill-level-color: #fff;
+  --skill-level-background-color: #00796b;
+  --keyword-color: #004d40;
+  --keyword-fill-color: #f5f5f5;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    border: none;
-    outline: 0;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: 0;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Inter Medium", sans-serif;
-    line-height: 1.25rem;
-    background: var(--page-background-color);
-    color: var(--font-color);
-    font-size: 0.875rem;
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  line-height: 1.25rem;
+  background: var(--page-background-color);
+  color: var(--font-color);
+  font-size: 0.875rem;
 }
 
 .clearfix {
-    clear: both;
+  clear: both;
 }
 
 .left {
-    float: left;
+  float: left;
 }
 
 .right {
-    float: right;
+  float: right;
 }
 
 a {
-    color: var(--font-color-light);
+  color: var(--font-color-light);
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 footer {
-    padding-bottom: 40px;
-    text-align: center;
+  padding-bottom: 40px;
+  text-align: center;
 }
 
 footer .profiles {
-    margin-bottom: 56px;
+  margin-bottom: 56px;
 }
 
 footer .profiles a:not(:last-of-type) {
-    border-right: 1px solid var(--font-color-lighter);
-    margin-right: 0.6em;
-    padding-right: 0.8em;
+  border-right: 1px solid var(--font-color-lighter);
+  margin-right: 0.6em;
+  padding-right: 0.8em;
 }
 
 footer #copyright {
-    color: var(--font-color-lighter);
+  color: var(--font-color-lighter);
 }
 
 #resume #main .list ul li:not(:first-child) {
-    margin-top: 28px;
+  margin-top: 28px;
 }
 
 #resume #main .list ul li h3 {
-    font-weight: 400;
-    font-size: 1em;
-    margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 4px;
 }
 
 #resume #main .list ul li h3.title {
-    font-weight: 700;
-    color: var(--font-color);
+  font-weight: 700;
+  color: var(--font-color);
 }
 
 #resume #main .list ul li h3.subtitle {
-    font-weight: 600;
-    color: var(--font-color-light);
+  font-weight: 600;
+  color: var(--font-color-light);
 }
 
 #resume #main .list ul li h3.location,
 #resume #main .list ul li h3.time {
-    color: var(--font-color-light);
+  color: var(--font-color-light);
 }
 
 #resume #main .list ul li h3.time .period {
-    color: var(--font-color-light);
+  color: var(--font-color-light);
 }
 
 #resume #main .list ul li .left,
 #resume #main .list ul li .right {
-    width: 50%;
+  width: 50%;
 }
 
 #resume #main .list ul li .left {
-    padding-right: 48px;
+  padding-right: 48px;
 }
 
 #resume #main .list ul li .right {
-    padding-left: 48px;
+  padding-left: 48px;
 }
 
 #resume #main .list ul li .description {
-    font-size: 1em;
-    color: var(--font-color-light);
+  font-size: 1em;
+  color: var(--font-color-light);
 }
 
 #resume #main .list ul li .description p {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 #resume #main .list ul li .description p:last-of-type {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 #resume #main .list ul li .highlights li {
-    list-style-type: disc;
-    margin-top: 12px;
-    margin-bottom: 0;
-    margin-left: 24px;
+  list-style-type: disc;
+  margin-top: 12px;
+  margin-bottom: 0;
+  margin-left: 24px;
 }
 
 #resume #main .list ul li .highlights li:not(:first-child) {
-    margin-top: 0;
+  margin-top: 0;
+}
+
+#resume #main #skills ul {
+  columns: 2;
 }
 
 #resume #main #contact.list ul li,
 #resume #main #skills.list ul li {
-    font-size: 1em;
-    line-height: 1.25rem;
+  font-size: 1em;
+  line-height: 1.25rem;
 }
 
 #resume #main #contact.list ul li:not(:first-child),
 #resume #main #skills.list ul li:not(:first-child) {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 #resume {
-    margin: 40px auto;
-    padding: 40px;
-    max-width: 768px;
-    box-sizing: content-box;
-    background: var(--content-background-color);
-    border-radius: 2px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
-        0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin: 40px auto;
+  padding: 40px;
+  max-width: 768px;
+  box-sizing: content-box;
+  background: var(--content-background-color);
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
 .resume-section {
-    margin-top: 28px;
-    display: block;
+  margin-top: 28px;
+  display: block;
 }
 
 .sectionLeft {
-    float: left;
-    /*width: 132px;*/
+  float: left;
+  /*width: 132px;*/
 }
 
 .sectionRight {
-    float: right;
-    width: 635px;
+  float: right;
+  width: 635px;
 }
 
 h1#name {
-    font-size: 2.57em;
-    line-height: 2.5rem;
-    color: var(--font-color);
-    font-weight: 600;
-    position: relative;
-    margin-top: 2px;
+  font-size: 2.57em;
+  line-height: 2.5rem;
+  color: var(--font-color);
+  font-weight: 600;
+  position: relative;
+  margin-top: 2px;
 }
 
 .current-position {
-    font-size: 1em;
-    font-weight: 600;
-    margin-right: 4px;
-    color: var(--font-color);
-    margin-top: 7px;
+  font-size: 1em;
+  font-weight: 600;
+  margin-right: 4px;
+  color: var(--font-color);
+  margin-top: 7px;
 }
 
 ul.subContact {
-    font-size: 1em;
-    margin-top: 12px;
+  font-size: 1em;
+  margin-top: 12px;
 }
 
 ul.subContact li {
-    display: inline-block;
-    color: var(--font-color-light);
-    margin-right: 8px;
+  display: inline-block;
+  color: var(--font-color-light);
+  margin-right: 8px;
 }
 
 ul.subContact li a {
-    color: var(--font-color-light);
+  color: var(--font-color-light);
 }
 
 ul.subContact li:not(:last-of-type) {
-    border-right: 1px solid var(--font-color-lighter);
-    margin-right: 0.6em;
-    padding-right: 0.8em;
+  border-right: 1px solid var(--font-color-lighter);
+  margin-right: 0.6em;
+  padding-right: 0.8em;
 }
 
 .icon {
-    width: 1em;
-    height: 1em;
-    display: inline-block;
-    vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .subContact svg {
-    fill: var(--font-color-light);
+  fill: var(--font-color-light);
 }
 
 .resumeSection {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1em;
-    color: var(--section-header-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+  color: var(--section-header-color);
 }
 
 .about-me {
-    color: var(--font-color-light);
-    font-size: 1em;
+  color: var(--font-color-light);
+  font-size: 1em;
 }
 
 .spacing-small #resume {
-    padding: 49px 0;
+  padding: 49px 0;
 }
 
 .spacing-small #top .subAbout {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .spacing-small .resume-section {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .spacing-small #resume #main .list ul li:not(:first-child) {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .spacing-small #resume #main .list ul li:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .spacing-small #resume #main #contact.list ul li:not(:first-child),
 .spacing-small #resume #main #skills.list ul li:not(:first-child) {
-    margin-top: 4px;
+  margin-top: 4px;
 }
 
 .spacing-large #resume {
-    padding: 81px 0 73px;
+  padding: 81px 0 73px;
 }
 
 .spacing-large #top .subAbout {
-    margin-top: 44px;
+  margin-top: 44px;
 }
 
 .spacing-large #resume #main .list ul {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .spacing-large #resume #main .list ul li {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .spacing-large #resume #main .list ul li:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .spacing-large .currentPosition {
-    position: relative;
-    margin-top: 7px;
+  position: relative;
+  margin-top: 7px;
 }
 
 .spacing-large ul.subContact {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 .spacing-large .resume-section {
-    margin-top: 44px;
+  margin-top: 44px;
 }
 
 #skills {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-flow: row wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .skills {
-    width: 50%;
-    padding-right: 5px;
+  width: 50%;
+  padding-right: 5px;
+}
+
+.skills ul {
+  margin-bottom: 20px;
 }
 
 .skills h3.title,
 .skills ul li {
-    margin-top: 0;
-    margin-bottom: 4px;
-    font-size: 1em;
-    color: var(--font-color-light);
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1em;
+  color: var(--font-color-light);
 }
 
 .skills h3.title {
-    font-weight: 700;
-    color: var(--font-color);
+  font-weight: 700;
+  color: var(--font-color);
 }
 
 .skill-level {
-    background-color: var(--skill-level-background-color);
-    border-radius: 2px;
-    border: none;
-    color: var(--skill-level-color);
-    font-size: 0.7rem;
-    font-style: normal;
-    font-weight: 200;
-    margin: 6px 6px 6px 6px;
-    outline: none;
-    padding: 2px 6px 2px 6px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: lowercase;
+  background-color: var(--skill-level-background-color);
+  border-radius: 2px;
+  border: none;
+  color: var(--skill-level-color);
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 400;
+  margin: 6px 6px 6px 6px;
+  outline: none;
+  padding: 2px 6px 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: lowercase;
 }
 
 .keyword {
-    border: 1px solid;
-    border-color: var(--keyword-color);
-    border-radius: 2px;
-    color: var(--keyword-color);
-    font-style: normal;
-    padding: 2px 6px 2px 6px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: lowercase;
+  border: 1px solid;
+  border-color: var(--keyword-color);
+  border-radius: 2px;
+  color: var(--keyword-color);
+  background-color: var(--keyword-fill-color);
+  font-style: normal;
+  font-size: 0.75rem;
+  padding: 3px 6px 3px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: lowercase;
 }
 
 @media screen and (max-width: 850px) {
-    .sectionLeft,
-    .sectionRight {
-        float: none;
-        width: 100%;
-    }
-    .spacing-small h2.resumeSection {
-        margin-bottom: 4px;
-    }
-    .spacing-large h2.resumeSection,
-    h2.resumeSection {
-        margin-bottom: 12px;
-    }
-    .mobile-hide {
-        display: none;
-    }
-    .desktop-hide {
-        display: block;
-    }
-    .left,
-    .right {
-        float: none;
-        padding: 0;
-        width: 100%;
-    }
-    #resume #main .list ul li .description {
-        margin-top: 4px;
-    }
-    #resume {
-        margin-top: 0;
-        border: none;
-        box-shadow: none;
-    }
-    .skills {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 0;
-    }
-    .skills:not(:first-child) {
-        margin-top: 28px;
-    }
+  .sectionLeft,
+  .sectionRight {
+    float: none;
+    width: 100%;
+  }
+  .spacing-small h2.resumeSection {
+    margin-bottom: 4px;
+  }
+  .spacing-large h2.resumeSection,
+  h2.resumeSection {
+    margin-bottom: 12px;
+  }
+  .mobile-hide {
+    display: none;
+  }
+  .desktop-hide {
+    display: block;
+  }
+  .left,
+  .right {
+    float: none;
+    padding: 0;
+    width: 100%;
+  }
+  #resume #main .list ul li .description {
+    margin-top: 4px;
+  }
+  #resume {
+    margin-top: 0;
+    border: none;
+    box-shadow: none;
+  }
+  .skills {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+  .skills:not(:first-child) {
+    margin-top: 28px;
+  }
 }
 
 @media screen and (max-width: 420px) {
-    body {
-        font-size: 1rem;
-    }
-    #resume {
-        padding-right: 15px;
-        padding-left: 15px;
-    }
+  body {
+    font-size: 1rem;
+  }
+  #resume {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 
 @media print {
-    #top h1#name span {
-        font-weight: 100;
-    }
-    #resume {
-        padding: 0;
-        margin: 0;
-        border: none;
-        box-shadow: none;
-    }
-    body {
-        margin-top: 17px;
-        background: 0 0;
-    }
-    .sectionLeft,
-    .sectionRight {
-        float: none;
-        width: 100%;
-    }
-    .spacing-small h2.resumeSection {
-        margin-bottom: 4px;
-    }
-    .spacing-large h2.resumeSection,
-    h2.resumeSection {
-        margin-bottom: 12px;
-    }
-    .mobile-hide {
-        display: none;
-    }
-    .desktop-hide {
-        display: block;
-    }
-    .left,
-    .right {
-        float: none;
-        padding: 0;
-        width: 100%;
-    }
-    #resume #main .list ul li .description {
-        margin-top: 4px;
-    }
-    #resume {
-        margin-top: 0;
-        margin-bottom: 0;
-        border: none;
-        box-shadow: none;
-    }
+  #top h1#name span {
+    font-weight: 100;
+  }
+  #resume {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+  body {
+    margin-top: 17px;
+    background: 0 0;
+  }
+  .sectionLeft,
+  .sectionRight {
+    float: none;
+    width: 100%;
+  }
+  .spacing-small h2.resumeSection {
+    margin-bottom: 4px;
+  }
+  .spacing-large h2.resumeSection,
+  h2.resumeSection {
+    margin-bottom: 12px;
+  }
+  .mobile-hide {
+    display: none;
+  }
+  .desktop-hide {
+    display: block;
+  }
+  .left,
+  .right {
+    float: none;
+    padding: 0;
+    width: 100%;
+  }
+  #resume #main .list ul li .description {
+    margin-top: 4px;
+  }
+  #resume {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: none;
+    box-shadow: none;
+  }
 
-    #resume #main .list ul li h3.time .period {
-        display: none;
-    }
-    #skills {
-        page-break-inside: avoid;
-    }
+  #resume #main .list ul li h3.time .period {
+    display: none;
+  }
+  #skills {
+    page-break-inside: avoid;
+  }
 
-    footer {
-        display: none;
-    }
+  footer {
+    display: none;
+  }
 }

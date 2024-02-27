@@ -9,7 +9,26 @@ Handlebars.registerHelper("join", function (array, sep) {
     })
     .join(sep);
 });
-
+// comparison helpers
+Handlebars.registerHelper("eq", function (a, b) {
+  return a === b;
+});
+Handlebars.registerHelper("gt", function (a, b) {
+  return a > b;
+});
+Handlebars.registerHelper("gte", function (a, b) {
+  return a >= b;
+});
+Handlebars.registerHelper("lt", function (a, b) {
+  return a < b;
+});
+Handlebars.registerHelper("lte", function (a, b) {
+  return a <= b;
+});
+Handlebars.registerHelper("ne", function (a, b) {
+  return a !== b;
+});
+// score prefix helper
 Handlebars.registerHelper("scorePrefix", function (string) {
   return string.toString().endsWith("%") ? "Percentage" : "CGPA";
 });
