@@ -9,6 +9,9 @@ Handlebars.registerHelper("join", function (array, sep) {
     })
     .join(sep);
 });
+Handlebars.registerHelper("lower", function (str) {
+  return str.toLowerCase();
+});
 // comparison helpers
 Handlebars.registerHelper("eq", function (a, b) {
   return a === b;
@@ -94,23 +97,7 @@ function render(resume) {
     resume.referencesEnabled = false;
   }
 
-  // use an ugly hack to set PDF/export-related options
-  if (process.argv.slice(2)[0] !== "export") {
-    const exportToPDF = {
-      network: "Export to PDF",
-      username: "",
-      url: "javascript:window.print();",
-    };
-
-    if (resume.basics.profiles && resume.basics.profiles.length) {
-      resume.basics.profiles[resume.basics.profiles.length] = exportToPDF;
-    } else {
-      resume.basics.profiles[0] = exportToPDF;
-    }
-    resume.linksEnabled = true;
-  } else {
-    resume.linksEnabled = false;
-  }
+  resume.displayMode = process.argv.slice(2)[0];
 
   const css = fs.readFileSync(__dirname + "/style.css", "utf-8");
   const tpl = fs.readFileSync(__dirname + "/main.hbs", "utf-8");

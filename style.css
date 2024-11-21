@@ -1,14 +1,26 @@
-:root {
-  --section-header-color: #009688;
+html[data-theme="light"] {
+  --section-header-color: rgb(0, 150, 136);
   --font-color: rgba(0, 0, 0, 0.88);
   --font-color-light: rgba(0, 0, 0, 0.64);
   --font-color-lighter: rgba(0, 0, 0, 0.4);
-  --page-background-color: #eee;
-  --content-background-color: #fff;
-  --skill-level-color: #fff;
-  --skill-level-background-color: #00796b;
-  --keyword-color: #004d40;
-  --keyword-fill-color: #f5f5f5;
+  --page-background-color: rgb(238, 238, 238);
+  --content-background-color: rgb(255, 255, 255);
+  --skill-level-color: rgb(255, 255, 255);
+  --skill-level-background-color: rgb(0, 121, 107);
+  --keyword-color: rgb(0, 77, 64);
+  --keyword-fill-color: rgb(245, 245, 245);
+}
+html[data-theme="dark"] {
+  --section-header-color: rgb(179, 136, 255);
+  --font-color: rgba(255, 255, 255, 0.88);
+  --font-color-light: rgba(255, 255, 255, 0.64);
+  --font-color-lighter: rgba(255, 255, 255, 0.4);
+  --page-background-color: rgb(18, 18, 18);
+  --content-background-color: rgb(31, 31, 31);
+  --skill-level-color: rgb(17, 9, 52);
+  --skill-level-background-color: rgb(179, 157, 219);
+  --keyword-color: rgb(179, 136, 255);
+  --keyword-fill-color: rgb(32, 29, 42);
 }
 
 * {
@@ -55,20 +67,21 @@ a:hover {
 footer {
   padding-bottom: 40px;
   text-align: center;
+  color: var(--font-color-lighter);
 }
 
-footer .profiles {
-  margin-bottom: 56px;
+footer .controls {
+  margin-bottom: 25px;
 }
 
-footer .profiles a:not(:last-of-type) {
+footer .controls a {
+  cursor: pointer;
+}
+
+footer .controls a:not(:last-of-type) {
   border-right: 1px solid var(--font-color-lighter);
   margin-right: 0.6em;
   padding-right: 0.8em;
-}
-
-footer #copyright {
-  color: var(--font-color-lighter);
 }
 
 #resume #main .list ul li:not(:first-child) {
@@ -159,7 +172,9 @@ footer #copyright {
   box-sizing: content-box;
   background: var(--content-background-color);
   border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+  box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
